@@ -1,10 +1,12 @@
 var number = random(1, 101);
+var guess_num = 0;
 
 function random(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function check() {
+    guess_num = guess_num + 1;
     var input_number = document.getElementById("num").value;
     var input_number_int = parseInt(input_number);
     if (input_number_int >= 1 && input_number_int <= 100) {
@@ -12,7 +14,7 @@ function check() {
             $("#tishi").removeClass("btn-outline-danger");
             $("#tishi").removeClass("btn-outline-primary");
             $("#tishi").addClass("btn-outline-success");
-            $("#tishi").html("(*╹▽╹*) 猜对啦! (*╹▽╹*)");
+            $("#tishi").html("(*╹▽╹*) 猜对啦! (*╹▽╹*)<br>(*╹▽╹*) 你一共猜了" + guess_num + "次 (*╹▽╹*)");
             $("#num").attr("disabled", "disabled");
             $("#conf").attr("disabled", "disabled");
             $("#rs").show();
@@ -45,6 +47,7 @@ function check() {
 
 function reset() {
     number = random(1, 101);
+    guess_num = 0;
     $("#tishi").removeClass("btn-outline-danger");
     $("#tishi").removeClass("btn-outline-primary");
     $("#tishi").removeClass("btn-outline-success");
