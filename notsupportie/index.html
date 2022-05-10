@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Cyq的主页</title>
-    <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="bootstrap-icons-1.8.1/book.svg">
+    <title>此网站不支持IE哦( ･´ω`･ )</title>
+    <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../bootstrap-icons-1.8.1/book.svg">
     <style type="text/css">
         body {
             background-color: #B5B1F6;
@@ -19,15 +19,17 @@
         }
     </style>
     <script type="text/javascript">
-        function isIE() {
-            if (!!window.ActiveXObject || "ActiveXObject" in window) {
-                return true;
-            } else {
-                return false;
+        function changePage(browser) {
+            var chrome = "https://google.cn/chrome/";
+            var edge = "https://www.microsoft.com/zh-cn/edge";
+            var safari = "https://apps.apple.com/cn/app/safari/id1146562112";
+            if (browser == "chrome") {
+                window.location.href = chrome;
+            } else if (browser == "edge") {
+                window.location.href = edge;
+            } else if (browser == "safari") {
+                window.location.href = safari;
             }
-        }
-        if (isIE() == true) {
-            window.location.href = "https://kingc2022.github.io/notsupportie";
         }
     </script>
 </head>
@@ -36,7 +38,7 @@
     <nav class="navbar navbar-expand-sm bg-light navbar-light justify-content-right">
         <div class="container-fluid">
             <a class="navbar-brand" href="https://kingc2022.github.io">
-                <img src="bootstrap-icons-1.8.1/book.svg" width="32" height="32">
+                <img src="../bootstrap-icons-1.8.1/book.svg" width="32" height="32">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -102,24 +104,32 @@
     </nav>
     <div class="text-center container p-5 my-5 zhuye">
         <div class="pt-5"></div>
+        <h1 class="display-3 text-primary">此网站不支持IE哦</h1>
         <div class="pt-5"></div>
-        <h1 class="display-3 text-primary">Cyq的主页</h1>
-        <div class="pt-4"></div>
-        <div style="text-align: left;">
-            <p class="lead text-dark text-break">Github使用说明:</p>
-            <div class="pt-2"></div>
-            <p class="lead text-dark text-break">导航到Github后，点击右边的Releases，点击除了Source code (zip)和Source code (tar.gz)之外的文件(选一个就行)</p>
-        </div>
+        <h6 class="display-6 text-primary">更换浏览器</h6>
         <div class="pt-3"></div>
+        <h6 class="display-6">
+            <button class="btn btn-lg btn-outline-dark" onclick="changePage('edge')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-microsoft" viewBox="0 0 16 16">
+                    <path d="M7.462 0H0v7.19h7.462V0zM16 0H8.538v7.19H16V0zM7.462 8.211H0V16h7.462V8.211zm8.538 0H8.538V16H16V8.211z"/>
+                </svg> Microsoft Edge
+            </button> &nbsp;&nbsp;
+            <button class="btn btn-lg btn-outline-dark" onclick="changePage('chrome')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                    <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+                </svg> Google Chrome
+            </button> &nbsp;&nbsp;
+            <button class="btn btn-lg btn-outline-dark" onclick="changePage('chrome')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-apple" viewBox="0 0 16 16">
+                    <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"/>
+                    <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"/>
+                </svg> Apple Safari
+            </button>
+        </h6>
         <div class="pt-5"></div>
     </div>
-    <ul class="nav justify-content-center fixed-bottom bg-secondary text-light">
-        <li class="nav-item">
-            <div class="navbar-text">Copyright &copy; 2022 Cyq , All rights reserved</div>
-        </li>
-    </ul>
 </body>
-<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
 
 </html>
