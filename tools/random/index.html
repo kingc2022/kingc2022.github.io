@@ -4,23 +4,43 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>猜数字</title>
+    <title>随机数生成器</title>
     <link rel="stylesheet" href="../../bootstrap-5.1.3-dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="../../bootstrap-icons-1.8.1/book.svg">
     <style type="text/css">
         body {
-            background-color: #b8e994;
+            background-color: #FFEB7F;
         }
         
-        .con {
-            background-color: #78e08f;
+        .zhuye {
             border-radius: 12px;
+            background-color: #FFD700;
         }
     </style>
+    <script type="text/javascript">
+        function random(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function random_num() {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            var num1_int = parseInt(num1);
+            var num2_int = parseInt(num2);
+            if (num1_int >= 0 && num1_int <= 100 && num2_int >= 0 && num2_int <= 100) {
+                var num = random(num1_int, num2_int);
+                $("#result").html("(*╹▽╹*)" + " " + num + " " + "(*╹▽╹*)");
+            } else {
+                $("#result").removeClass("btn-outline-primary");
+                $("#result").addClass("btn-outline-danger");
+                $("#result").html("你的输入不合法");
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-light navbar-light justify-content-right">
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="https://kingc2022.github.io">
                 <img src="../../bootstrap-icons-1.8.1/book.svg" width="32" height="32">
@@ -88,26 +108,29 @@
             </div>
         </div>
     </nav>
-    <div class="text-center container p-5 my-5 con">
+    <div class="text-center container p-5 my-5 zhuye">
         <div class="pt-5"></div>
         <div class="pt-5"></div>
         <h1 class="display-3 text-primary">猜数字</h1>
         <div class="pt-4"></div>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="num" placeholder="1-100的数字" name="num">
-            <label for="num">请输入1-100的数字</label>
+            <input type="text" class="form-control" id="num1" placeholder="起始数" name="num1">
+            <label for="num1">随机起始数</label>
         </div>
-        <div class="d-grid gap-3">
-            <button id="conf" class="btn btn-lg btn-primary btn-block" onclick="check()">确认</button>
-            <button id="rs" class="btn btn-lg btn-primary btn-block" style="display: none;" onclick="reset()">重置</button>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="num2" placeholder="结束数" name="num2">
+            <label for="num2">随机结束数</label>
+        </div>
+        <div class="d-grid">
+            <button id="conf" class="btn btn-lg btn-primary btn-block" onclick="random_num()">确认</button>
         </div>
         <div class="pt-4"></div>
-        <button class="btn btn-lg btn-outline-primary" id="tishi" disabled>(*╹▽╹*) 提示区 (*╹▽╹*)</button>
+        <button class="btn btn-lg btn-outline-primary" id="result" disabled>(*╹▽╹*) 结果区 (*╹▽╹*)</button>
         <div class="pt-2"></div>
     </div>
 </body>
+
 <script type="text/javascript" src="../../jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../../bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/guess.js"></script>
 
 </html>
