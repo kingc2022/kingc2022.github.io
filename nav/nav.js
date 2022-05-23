@@ -48,3 +48,11 @@ function urlchange(url) {
         window.open("https://www.zhihu.com");
     }
 }
+
+$(document).ready(function() {
+    $("#content").keypress(function(e) {
+        if (e.keyCode == 13)
+            search();
+    });
+
+});
