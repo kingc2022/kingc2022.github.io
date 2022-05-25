@@ -25,9 +25,8 @@
         function random_num() {
             var num1 = document.getElementById("num1").value;
             var num2 = document.getElementById("num2").value;
-            var num1_int = parseInt(num1);
-            var num2_int = parseInt(num2);
-            if (num1_int >= 0 && num1_int <= 100 && num2_int >= 0 && num2_int <= 100) {
+            var re = /^\-?([1-9]\d*|0)(\.\d+)?$/;
+            if (!re.test(num1) && !re.test(num2)) {
                 var num = random(num1_int, num2_int);
                 $("#result").html("(*╹▽╹*)" + " " + num + " " + "(*╹▽╹*)");
             } else {
@@ -71,7 +70,7 @@
                         </svg> 小作品
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="https://kingc2022.github.io/fireworks" target="_blank">烟花</a></li>
+                            <li><a class="dropdown-item" href="https://kingc2022.github.io/works/fireworks" target="_blank">烟花</a></li>
                             <li><a class="dropdown-item" href="http://learning-log-two.herokuapp.com" target="_blank">学习日志</a></li>
                             <li><a class="dropdown-item" href="https://github.com/kingc2022/guess" target="_blank">电脑猜数字</a></li>
                             <li><a class="dropdown-item" href="https://github.com/kingc2022/blackboard" target="_blank">黑板</a></li>
@@ -111,7 +110,7 @@
     <div class="text-center container p-5 my-5 zhuye">
         <div class="pt-5"></div>
         <div class="pt-5"></div>
-        <h1 class="display-3 text-primary">猜数字</h1>
+        <h1 class="display-3 text-primary">随机数生成器</h1>
         <div class="pt-4"></div>
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="num1" placeholder="起始数" name="num1">
