@@ -31,11 +31,18 @@
             if (isnum == true) {
                 var num1_int = parseInt(num1);
                 var num2_int = parseInt(num2);
-                var num = random(num1_int, num2_int);
-                $("#result").removeClass("btn-outline-danger");
-                $("#result").removeClass("btn-outline-primary");
-                $("#result").addClass("btn-outline-primary");
-                $("#result").html("(*╹▽╹*)" + " " + num + " " + "(*╹▽╹*)");
+                if (num1_int > num2_int) {
+                    $("#result").removeClass("btn-outline-primary");
+                    $("#result").addClass("btn-outline-danger");
+                    $("#result").html("你的输入不合法");
+                } else {
+                    num2_int = num2_int + 1;
+                    var num = random(num1_int, num2_int);
+                    $("#result").removeClass("btn-outline-danger");
+                    $("#result").removeClass("btn-outline-primary");
+                    $("#result").addClass("btn-outline-primary");
+                    $("#result").html("(*╹▽╹*)" + " " + num + " " + "(*╹▽╹*)");
+                }
             } else {
                 $("#result").removeClass("btn-outline-primary");
                 $("#result").addClass("btn-outline-danger");
