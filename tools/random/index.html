@@ -32,6 +32,9 @@
                 var num1_int = parseInt(num1);
                 var num2_int = parseInt(num2);
                 var num = random(num1_int, num2_int);
+                $("#result").removeClass("btn-outline-danger");
+                $("#result").removeClass("btn-outline-primary");
+                $("#result").addClass("btn-outline-primary");
                 $("#result").html("(*╹▽╹*)" + " " + num + " " + "(*╹▽╹*)");
             } else {
                 $("#result").removeClass("btn-outline-primary");
