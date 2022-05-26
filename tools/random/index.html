@@ -25,8 +25,10 @@
         function random_num() {
             var num1 = document.getElementById("num1").value;
             var num2 = document.getElementById("num2").value;
-            var re = /^\-?([1-9]\d*|0)(\.\d+)?$/;
-            if (!re.test(num1) && !re.test(num2)) {
+            if (isNaN(num1) == false && isNaN(num2) == false) {
+                var isnum = true;
+            }
+            if (isnum == true) {
                 var num1_int = parseInt(num1);
                 var num2_int = parseInt(num2);
                 var num = random(num1_int, num2_int);
