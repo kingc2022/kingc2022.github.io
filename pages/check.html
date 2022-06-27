@@ -31,16 +31,14 @@
                     window.location.href = getReqVar("pc_url");
                 }
             } else { // Phone, return false. PC, return true.
-                if (getReqVar("reverse") == "false") { // Phone, return true. PC, return false.
-                    var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
-                        isIphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
-                        isAndroid = ua.match(/(Android)\s+([\d.]+)/),
-                        isMobile = isIphone || isAndroid;
-                    if (!isMobile) {
-                        window.location.href = getReqVar("pc_url");
-                    } else {
-                        window.location.href = getReqVar("mb_url");
-                    }
+                var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+                    isIphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+                    isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+                    isMobile = isIphone || isAndroid;
+                if (!isMobile) {
+                    window.location.href = getReqVar("pc_url");
+                } else {
+                    window.location.href = getReqVar("mb_url");
                 }
             }
         }
